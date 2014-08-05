@@ -5,4 +5,4 @@ This collection of files serves as a simple static demonstration of how to post 
 ## TODO
 
 - [ ] Resolve 405 Error on Safari
-- [x] Validation using [Bootstrap Validator](https://github.com/nghuuphuoc/bootstrapvalidator)
+- [ ] Validation using [Bootstrap Validator](https://github.com/nghuuphuoc/bootstrapvalidator)
