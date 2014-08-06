@@ -82,9 +82,11 @@ $(document).ready(function() {
         })
             .fail(function(data) {
                 console.warn("Error! Data: " + data.statusText);
-                // HACK for Safari - even if we fail, we will redirect 
-                // Perhaps we can check if we are using Safari to make this hack a bit more specific?
-                $(location).attr('href',redirectUrl);
+                // HACK - check if browser is Safari - and redirect even if fail b/c we know the form submits.
+                if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
+                    //alert("Browser is Safari -- we get an error, but the form still submits -- continue.");
+                    $(location).attr('href',redirectUrl);                
+                }
             });
     });
 });
