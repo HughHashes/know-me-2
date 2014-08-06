@@ -17,4 +17,6 @@ The spreadsheet is located [here](https://docs.google.com/spreadsheets/d/1p6X_He
 ## TODO
 
 - [ ] Resolve 405 Error on Safari
+- [x] Workaround for 405 error with Safari browser check
+- [x] Add user feedback while ajax is submitting the request
 - [x] Validation using [Bootstrap Validator](https://github.com/nghuuphuoc/bootstrapvalidator)
