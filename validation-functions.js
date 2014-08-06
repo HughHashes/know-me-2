@@ -77,11 +77,14 @@ $(document).ready(function() {
         var url = 'https://script.google.com/macros/s/AKfycbzy3UKiaESk9y2ccnBkdSgCo1zxJ0Kx0qE0_eKro7QYE5yFKJVH/exec';
         var redirectUrl = 'success-page.html';
         var jqxhr = $.post(url, $form.serialize(), function(data) {
-            console.log("Success! Data: " + data);
+            console.log("Success! Data: " + data.statusText);
             $(location).attr('href',redirectUrl);
         })
             .fail(function(data) {
-                console.warn("Error! Data: " + data);
+                console.warn("Error! Data: " + data.statusText);
+                // HACK for Safari - even if we fail, we will redirect 
+                // Perhaps we can check if we are using Safari to make this hack a bit more specific?
+                $(location).attr('href',redirectUrl);
             });
     });
 });
